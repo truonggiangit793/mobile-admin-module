@@ -79,7 +79,7 @@ Router.get('/account/my-task/done', authentication, accountGetTaskDone);
 Router.get(
   '/account/my-task/:taskID/detail',
   authentication,
-  authorization.checkAction,
+  // authorization.checkAction,
   accountGetTaskDetail,
 );
 
@@ -150,6 +150,7 @@ Router.post(
   '/task/:taskID/add-members',
   authentication,
   authorization.manager,
+  authorization.checkAction,
   taskAddMember,
 );
 
